@@ -1,0 +1,10 @@
+
+Magneto ~/WebDevLearning/KnexTodoApp (master*)
+$ knex migrate:make create_todo_table
+Created Migration: /Users/adliano/WebDevLearning/KnexTodoApp/migrations/20190601105943_create_todo_table.js
+
+
+mysql -e 'show databases'
+
+
+

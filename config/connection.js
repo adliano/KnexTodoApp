@@ -3,25 +3,30 @@
 // *********************************************************************************
 
 // Require mysql
-var mysql = require('mysql')
+var mysql = require('mysql');
+
+const Knex = require('knex')(require('../knexfile'))
 
 // Set up our connection information
-var connection = mysql.createConnection({
-  port: 3306,
-  host: 'localhost',
-  user: 'devUser',
-  password: '',
-  database: 'todolist'
-})
+// var connection = mysql.createConnection({
+//   port: 3306,
+//   host: 'localhost',
+//   user: 'devUser',
+//   password: '',
+//   database: 'todolist'
+// })
 
-// Connect to the database
-connection.connect(function (err) {
-  if (err) {
-    console.error('error connecting: ' + err.stack)
-    return;
-  }
-  console.log('connected as id ' + connection.threadId)
-})
+// // Connect to the database
+// connection.connect(function (err) {
+//   if (err) {
+//     console.error('error connecting: ' + err.stack)
+//     return;
+//   }
+//   console.log('connected as id ' + connection.threadId)
+// })
 
 // Export connection
-module.exports = connection
+// module.exports = connection
+
+// Exports the connection for other files to use
+module.exports = Knex;
