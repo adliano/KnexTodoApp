@@ -1,0 +1,19 @@
+{
+  "name": "orm-to-knex",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "watch": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "knex": "^0.17.0",
+    "mysql": "^2.12.0"
+  }
+}
