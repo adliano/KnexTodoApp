@@ -8,3 +8,45 @@ mysql -e 'show databases'
 
 
 
+Once you have finished writing the migrations, you can update the database matching your NODE_ENV by running:
+
+$ knex migrate:latest
+
+
+$ mysql -e 'describe knex_todolist_db.todo'
++------------+------------------+------+-----+-------------------+-------------------+
+| Field      | Type             | Null | Key | Default           | Extra             |
++------------+------------------+------+-----+-------------------+-------------------+
+| id         | int(10) unsigned | NO   | PRI | NULL              | auto_increment    |
+| text       | varchar(255)     | NO   |     | NULL              |                   |
+| completed  | tinyint(1)       | YES  |     | 0                 |                   |
+| created_at | datetime         | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
+| updated_at | datetime         | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
++------------+------------------+------+-----+-------------------+-------------------+
+
+
+
+
+
+To create a seed file, run:
+
+$ knex seed:make todo_seed
+Created seed file: /Users/adliano/WebDevLearning/KnexTodoApp/seeds/todo_seed.js
+
+open the `/Users/adliano/WebDevLearning/KnexTodoApp/seeds/todo_seed.js` file
+
+
+To run seed files, execute:
+
+$ knex seed:run
+
+
+$ mysql -e 'select * from knex_todolist_db.todo'
++----+----------------------+-----------+---------------------+---------------------+
+| id | text                 | completed | created_at          | updated_at          |
++----+----------------------+-----------+---------------------+---------------------+
+|  1 | buy ticket to Hawaii |         0 | 2019-06-01 12:01:24 | 2019-06-01 12:01:24 |
+|  2 | play lottery         |         1 | 2019-06-01 12:01:24 | 2019-06-01 12:01:24 |
+|  3 | buy new motorcycle   |         0 | 2019-06-01 12:01:24 | 2019-06-01 12:01:24 |
++----+----------------------+-----------+---------------------+---------------------+
+
