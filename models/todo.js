@@ -41,6 +41,35 @@ class Todo {
     return knex(this.table).insert(dataObj);
   }
 
+
+  /*
+  del / delete — .del()
+  Aliased to del as delete is a reserved word in JavaScript, 
+  this method deletes one or more rows, based on other conditions specified 
+  in the query. Resolves the promise / fulfills the callback with the number
+  of affected rows for the query.
+
+  knex('accounts')
+   .where('activated', false)
+   .del()
+  */
+
+  /**
+   * destroy()
+   * @param {int} idNumber 
+   */
+  destroy(idNumber){
+    return knex(this.table)
+    .where('id', idNumber)
+    .del();
+  }
+
+
+
+  update(){
+    
+  }
+
   /**=======================================================
    * ::::::::::::::::: END OF NEW CODE ::::::::::::::::::::::
    * ========================================================
