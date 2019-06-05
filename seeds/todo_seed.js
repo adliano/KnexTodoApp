@@ -1,16 +1,18 @@
-
 exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
-  return knex('todo').del()
-    .then(function () {
+  return knex("todo")
+    .del()
+    .then(function() {
       // Inserts seed entries
-      return knex('todo').insert([
-        { text: 'buy ticket to Hawaii'},
-        { text: 'play lottery', completed: true},
-        { text: 'buy new motorcycle'}
+      return knex("todo").insert([
+        { text: "buy ticket to Hawaii" },
+        { text: "play lottery", completed: true },
+        { text: "buy new motorcycle" }
       ]);
     });
 };
+
+// knex seed:run
 
 /*
 +------------+------------------+------+-----+-------------------+-------------------+

@@ -1,0 +1,28 @@
+mysql> describe todo;
++------------+------------------+------+-----+-------------------+-------------------+
+| Field      | Type             | Null | Key | Default           | Extra             |
++------------+------------------+------+-----+-------------------+-------------------+
+| id         | int(10) unsigned | NO   | PRI | NULL              | auto_increment    |
+| text       | varchar(255)     | NO   |     | NULL              |                   |
+| completed  | tinyint(1)       | YES  |     | 0                 |                   |
+| created_at | datetime         | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
+| updated_at | datetime         | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
++------------+------------------+------+-----+-------------------+-------------------+
+
+mysql> describe knex_migrations;
++----------------+------------------+------+-----+---------+----------------+
+| Field          | Type             | Null | Key | Default | Extra          |
++----------------+------------------+------+-----+---------+----------------+
+| id             | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| name           | varchar(255)     | YES  |     | NULL    |                |
+| batch          | int(11)          | YES  |     | NULL    |                |
+| migration_time | timestamp        | YES  |     | NULL    |                |
++----------------+------------------+------+-----+---------+----------------+
+
+mysql> describe knex_migrations_lock;
++-----------+------------------+------+-----+---------+----------------+
+| Field     | Type             | Null | Key | Default | Extra          |
++-----------+------------------+------+-----+---------+----------------+
+| index     | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| is_locked | int(11)          | YES  |     | NULL    |                |
++-----------+------------------+------+-----+---------+----------------+
